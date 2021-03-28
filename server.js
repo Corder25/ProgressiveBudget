@@ -17,19 +17,19 @@ app.use(express.static("public"));
 // routes
 app.use(require("./routes/api.js"));
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb+srv://dbCorder:Lakers2424@cluster0.7p4nf.mongodb.net/budget?retryWrites=true&w=majority', {
+mongoose
+  .connect(
+    process.env.MONGODB_URI ||
+      "mongodb+srv://dbCorder:Lakers2424@cluster0.7p4nf.mongodb.net/budget?retryWrites=true&w=majority",
+    {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
-      useFindAndModify: false
-  }
-).then(() => {
-  app.listen(PORT, () => {
+      useFindAndModify: false,
+    }
+  )
+  .then(() => {
+    app.listen(PORT, () => {
       console.log(`App running on port ${PORT}!`);
+    });
   });
-})
-
-
-
- 
